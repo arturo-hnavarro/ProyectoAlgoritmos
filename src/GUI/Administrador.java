@@ -29,18 +29,19 @@ public class Administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         DesktopAdministrador = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelBienvenido = new javax.swing.JLabel();
         JMB_MenuAdministrador = new javax.swing.JMenuBar();
         JMB_aerolineas = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bienvenido Administrador");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setText("Bienvenido Administrador.");
+        jLabelBienvenido.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabelBienvenido.setText("Bienvenido Administrador.");
 
-        DesktopAdministrador.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopAdministrador.setLayer(jLabelBienvenido, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout DesktopAdministradorLayout = new javax.swing.GroupLayout(DesktopAdministrador);
         DesktopAdministrador.setLayout(DesktopAdministradorLayout);
@@ -48,14 +49,14 @@ public class Administrador extends javax.swing.JFrame {
             DesktopAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DesktopAdministradorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabelBienvenido)
                 .addContainerGap(272, Short.MAX_VALUE))
         );
         DesktopAdministradorLayout.setVerticalGroup(
             DesktopAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DesktopAdministradorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabelBienvenido)
                 .addContainerGap(379, Short.MAX_VALUE))
         );
 
@@ -70,6 +71,15 @@ public class Administrador extends javax.swing.JFrame {
                 JMB_aerolineasActionPerformed(evt);
             }
         });
+
+        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        JMB_aerolineas.add(jMenuItem1);
+
         JMB_MenuAdministrador.add(JMB_aerolineas);
 
         jMenu2.setText("Edit");
@@ -103,6 +113,10 @@ public class Administrador extends javax.swing.JFrame {
         aerolineas.setLocation(x, y);
         aerolineas.show();
     }//GEN-LAST:event_JMB_aerolineasMouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,7 +157,8 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JDesktopPane DesktopAdministrador;
     private javax.swing.JMenuBar JMB_MenuAdministrador;
     private javax.swing.JMenu JMB_aerolineas;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelBienvenido;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

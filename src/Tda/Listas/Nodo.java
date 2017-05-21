@@ -3,8 +3,11 @@
  * @author  : Prof. Gilberth Chaves Avila
  * Date     : 2017-05-09
  */
-package Logica;
-public class Nodo {
+package Tda.Listas;
+
+import java.io.Serializable;
+
+public class Nodo implements Serializable {
     //Atributos
     public Object elemento;
     public Nodo sgte;

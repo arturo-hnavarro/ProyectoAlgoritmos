@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Tda;
+package Tda.Listas;
 
-import Logica.Nodo;
+import java.io.Serializable;
 
 /**
  *
- * @author Equipo
+ * @author Arturo
  */
-public class ListaEnlazada implements Lista {
+public class ListaEnlazada implements Lista, Serializable {
 
     private Nodo inicio;//Representa el inicio de la lista, si se pierde se elimina la pila
 

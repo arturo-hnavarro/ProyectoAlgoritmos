@@ -1,13 +1,14 @@
 package Domain;
 
-import Tda.ListaEnlazada;
+import Tda.Listas.ListaEnlazada;
+import java.io.Serializable;
 
 /**
  *
  * @author Arturo
  */
-public class Aerolinea {
-    private static int consecutivo=0;
+public class Aerolinea implements Serializable {
+    transient private static int  consecutivo=0;
     private int codigo;
     private String nombre;
     private String sitioWeb;
@@ -64,7 +65,11 @@ public class Aerolinea {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    @Override
+    public String toString() {
+        return "Aerolinea{" + "codigo=" + codigo + ", nombre=" + nombre + ", sitioWeb=" + sitioWeb + ", correo=" + correo + '}';
+    }
     
-    
-    
+ 
 }

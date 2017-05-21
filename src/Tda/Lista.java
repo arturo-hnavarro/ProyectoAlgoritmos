@@ -3,9 +3,7 @@
  * @author  : Prof. Gilberth Chaves Avila
  * Date     : 2017-04-25
  */
-package Tda;
-
-import Logica.Nodo;
+package Tda.Listas;
 
 public interface Lista {
     	public int getSize() throws ListaException; // Devuelve el numero de elementos en la lista
