@@ -132,35 +132,35 @@ public class AerolineaDataTest implements Serializable {
 //        } catch (ListaException ex) {
 //            Logger.getLogger(AerolineaDataTest.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-//
+
 //    }
-//    @Test
-//    public void eliminarAerolinea(){
-//         try {
-//            System.out.println("ELIMINAR\n\n");
-//            //Aerolinea por modificar
-//            ListaEnlazada telefonos = new ListaEnlazada();
-//            telefonos.insertar("2256-7070");
-//            telefonos.insertar("1234-5678");
-//            telefonos.insertar("4321-8247");
-//            telefonos.insertar("2548-1753");
-//            Aerolinea eliminar = new Aerolinea(1, "Este es el nuevo nombre", "ahorasi.com", telefonos, "nuevoCorreomi@micorreo");
-//
-//            int n = busquedaBinariaIterativa(this.aerolineas, eliminar.getCodigo(), 1, this.aerolineas.getSize(),
-//                    this.aerolineas.getSize());
-//            
-//            if (n > 0) {
-//                Aerolinea aerolineaActual = (Aerolinea) aerolineas.getNodo(n).elemento;
-//                 this.aerolineas.suprimir(aerolineaActual);
-//            }
-//           
-//            arhivos.escribirArchivo(aerolineas);
-//
-//        } catch (ListaException ex) {
-//            Logger.getLogger(AerolineaDataTest.class.getName()).log(Level.SEVERE, null, ex);
-//        } 
-//        
-//    }
+    @Test
+    public void eliminarAerolinea(){
+         try {
+            System.out.println("ELIMINAR\n\n");
+            //Aerolinea por modificar
+            ListaEnlazada telefonos = new ListaEnlazada();
+            telefonos.insertar("2256-7070");
+            telefonos.insertar("1234-5678");
+            telefonos.insertar("4321-8247");
+            telefonos.insertar("2548-1753");
+            Aerolinea eliminar = new Aerolinea(1, "Este es el nuevo nombre", "ahorasi.com", telefonos, "nuevoCorreomi@micorreo");
+
+            int n = busquedaBinariaIterativa(this.aerolineas, eliminar.getCodigo(), 1, this.aerolineas.getSize(),
+                    this.aerolineas.getSize());
+            
+            if (n > 0) {
+                Aerolinea aerolineaActual = (Aerolinea) aerolineas.getNodo(n).elemento;
+                 this.aerolineas.suprimir(aerolineaActual);
+            }
+           
+            arhivos.escribirArchivo(aerolineas);
+
+        } catch (ListaException ex) {
+            Logger.getLogger(AerolineaDataTest.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        
+    }
 
     @Test
     public void leerAerolinea() {
