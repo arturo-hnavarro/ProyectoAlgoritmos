@@ -2,7 +2,8 @@ package Data;
 
 import Domain.Aerolinea;
 import Tda.Listas.ListaEnlazada;
-import Tda.Listas.Nodo;
+import Tda.Listas.ListaException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,43 +21,46 @@ public class Archivos implements Serializable {
 
     ObjectOutputStream oos;
     ObjectInputStream ois;
+    String nombreArchivo = "aerolineas.dat";
+    File file = new File("aerolineas.dat");
 
-    public void escribirArchivo(Object elemento, String nombreArchivo) {
+    public Archivos(String nombreArchivo) throws IOException {
+    }
+
+    public void escribirArchivo(ListaEnlazada aerolineas) throws ListaException {
 
         try {
-            oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo,true));
-            oos.writeObject((Aerolinea)elemento);
+            oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo, false));
+            int n = aerolineas.getSize();
+            for (int i = 1; i <= n; i++) {
+                oos.writeObject((Aerolinea)aerolineas.getNodo(i).elemento);
+            }
             oos.close();
-            System.out.println("Escribio");
         } catch (IOException ex) {
-            Logger.getLogger(Archivos.class.getName()).log(Level.SEVERE, null + "error al escribir", ex);
+            Logger.getLogger(Archivos.class.getName()).log(Level.SEVERE, null + " error al escribir", ex);
         }
     }
 
-    public Object leerArchivo(String nombreArchivo) {
+    public Object leerArchivo() throws IOException {
         ListaEnlazada aerolineas = new ListaEnlazada();
-        Aerolinea retorno = null;
-        
+        Aerolinea retorno = new Aerolinea();
+        ois = new ObjectInputStream(new FileInputStream(nombreArchivo));
         try {
-            ois = new ObjectInputStream(new FileInputStream(nombreArchivo));
-            retorno =(Aerolinea) ois.readObject();
-            aerolineas.insertar(retorno);
-
+            retorno = (Aerolinea) ois.readObject();
             while (retorno != null) {
-                
-                retorno =(Aerolinea) ois.readObject();
-                System.out.println("Estoy en leerArchivo: " );
                 aerolineas.insertar(retorno);
-                
+                retorno = (Aerolinea) ois.readObject();
+
             }
             ois.close();
-
+            
         } catch (IOException ex) {
-//            Logger.getLogger(Archivos.class.getName()).log(Level.SEVERE, null + "IOE", ex);
+            //Logger.getLogger(Archivos.class.getName()).log(Level.SEVERE, null + "IOEasdf", ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Archivos.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return aerolineas;
     }
-    
+
 }

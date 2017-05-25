@@ -26,6 +26,14 @@ public class Aerolinea implements Serializable {
         this.correo = correo;
     }
 
+    public Aerolinea(int codigo, String nombre, String sitioWeb, ListaEnlazada telefonos, String correo) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.sitioWeb = sitioWeb;
+        this.telefonos = telefonos;
+        this.correo = correo;
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -65,11 +73,11 @@ public class Aerolinea implements Serializable {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+    
 
     @Override
     public String toString() {
-        return "Aerolinea{" + "codigo=" + codigo + ", nombre=" + nombre + ", sitioWeb=" + sitioWeb + ", correo=" + correo + '}';
+        return "Aerolinea{" + "codigo=" + codigo + ", nombre=" + nombre + ", sitioWeb=" + sitioWeb + ", telefonos=" + telefonos + ", correo=" + correo + '}';
     }
-    
- 
+
 }

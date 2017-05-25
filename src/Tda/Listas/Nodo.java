@@ -17,6 +17,22 @@ public class Nodo implements Serializable {
         this.elemento=elemento;
         this.sgte=null;
     }
+
+    public Object getElemento() {
+        return elemento;
+    }
+
+    public void setElemento(Object elemento) {
+        this.elemento = elemento;
+    }
+
+    public Nodo getSgte() {
+        return sgte;
+    }
+
+    public void setSgte(Nodo sgte) {
+        this.sgte = sgte;
+    }
     
     //RECARGAMOS EL CONSTRUCTOR PARA EL NODO CABECERA
     //NODO CABECERA == NODO VACIO

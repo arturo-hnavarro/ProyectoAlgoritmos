@@ -3,12 +3,13 @@ package Data;
 import Domain.Aerolinea;
 import Tda.Listas.ListaEnlazada;
 import Tda.Listas.ListaException;
+import java.io.Serializable;
 
 /**
  *
  * @author Arturo
  */
-public class AerolineaData {
+public class AerolineaData implements Serializable{
 
     ListaEnlazada aerolineas;
 
