@@ -5,6 +5,7 @@
  */
 package Tda.Listas;
 
+import Domain.Aerolinea;
 import java.io.Serializable;
 
 /**
@@ -100,11 +101,11 @@ public class ListaEnlazada implements Lista, Serializable {
     @Override
     public boolean existe(Object elemento) throws ListaException {
         if (isEmpty()) {
-            throw new ListaException("La lista está vacía");
+            return false;
         }
         Nodo aux = inicio;
         while (aux != null) {
-            if (aux.elemento.equals(elemento)) {
+            if (aux.elemento.equals((Aerolinea)elemento)) {
                 return true;
             }
             aux = aux.sgte;
